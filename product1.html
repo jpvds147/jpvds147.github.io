@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Classic Backpack - JaJa Apparel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Classic Backpack</h1>
+    <a href="index.html">← Back to store</a>
+  </header>
+
+  <main>
+    <img src="images/backpack.jpg" alt="Classic Backpack" style="width:300px; max-width: 90vw;" />
+    <p>Price: R1200</p>
+    <p>Description: A premium, simple backpack inspired by the 90's — super durable, single pocket design.</p>
+
+    <button id="add-to-cart-btn">Add to Basket</button>
+  </main>
+
+  <script>
+    // Add to cart functionality for this product detail page
+    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+      const cart = JSON.parse(localStorage.getItem('cart') || '{}');
+      const id = '1'; // product id
+      const name = 'Classic Backpack';
+      const price = 1200;
+
+      if (cart[id]) {
+        cart[id].quantity += 1;
+      } else {
+        cart[id] = { name, price, quantity: 1 };
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Added Classic Backpack to your basket!');
+    });
+  </script>
+</body>
+</html>
