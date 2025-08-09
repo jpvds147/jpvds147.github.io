@@ -90,6 +90,23 @@
 }
 
 
+#jaja {
+  background-color: #111;
+  padding: 40px 20px;
+  text-align: center;
+  color: #d4af37;
+}
+
+#jaja .header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3em;
+}
+
+#jaja .header-content p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 1em;
+}
 
 
 .product-link {
