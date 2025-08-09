@@ -1,3 +1,12 @@
+
+
+h1 {
+  font-family: 'Harlow Solid Italic', sans-serif;  /* Replace with your chosen font */
+  font-weight: 700;                         /* Optional: set font weight */
+  font-style: normal;                       /* Optional: set style */
+}
+
+
 /* Base menu styles */
 .main-menu ul {
   list-style: none;
