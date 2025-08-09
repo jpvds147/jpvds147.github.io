@@ -90,11 +90,21 @@ section h2 {
 }
 
 /* Grid for products */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+.products {
+  display: flex;
+  overflow-x: auto;        /* Enables horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scroll when using scroll buttons or touch */
+  gap: 20px;
+  padding-bottom: 10px;    /* Optional: some padding below */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
+
+.product {
+  flex: 0 0 auto;          /* Prevent shrinking, keep width */
+  width: 220px;            /* Fixed width so they line up horizontally */
+  /* other styles as before */
+}
+
 
 /* Cards */
 .card {
