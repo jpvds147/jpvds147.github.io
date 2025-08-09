@@ -13,6 +13,14 @@
 </head>
 <body>
 
+const menuToggle = document.getElementById('menu-toggle');
+const mainMenu = document.getElementById('main-menu');
+
+menuToggle.addEventListener('click', () => {
+  mainMenu.classList.toggle('show');
+});
+
+ 
   <header>
 
    <nav class="main-menu" id="main-menu">
