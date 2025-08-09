@@ -4,6 +4,12 @@
   text-decoration: none; /* Remove underline */
 }
 
+.products-container {
+  display: flex;
+  gap: 20px;           /* space between cards */
+  justify-content: center; /* center cards horizontally (optional) */
+  flex-wrap: nowrap;   /* keep them on one line, no wrapping */
+}
 
 
 
