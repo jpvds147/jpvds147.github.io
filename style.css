@@ -1,3 +1,12 @@
+.product-link {
+  display: block;       /* Make link behave like a block */
+  color: inherit;       /* Inherit text color */
+  text-decoration: none; /* Remove underline */
+}
+
+
+
+
 @font-face {
   font-family: 'HarlowSolidItalic';
   src: url('fonts/HARLOWSI_1.TTF') format('truetype');
@@ -98,16 +107,19 @@ section h2 {
 
 /* Cards */
 .card {
-  background: #1a1a1a;
+  background: #222;
   border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  transform: scale(1.05);
+  cursor: pointer;
 }
+
 
 .card img {
   width: 100%;
