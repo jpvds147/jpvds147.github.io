@@ -3,6 +3,7 @@
   src: url('fonts/HARLOWSI_1.TTF') format('truetype');
   font-style: italic;
   font-weight: normal;
+  font-display: swap;
 }
 
 
