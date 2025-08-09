@@ -1,17 +1,20 @@
+@font-face {
+  font-family: 'HarlowSolidItalic';
+  src: url('fonts/HarlowSolidItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+}
+
+
 :root {
   --gold: #d4af37;
   --dark: #111;
   --light: #f5f5f5;
-  --font-heading: 'Harlow Solid Italic', sans-serif;
+  --font-heading: 'HarlowSolidItalic', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
 
-@import url('https://fonts.cdnfonts.com/css/harlow-solid-let');
 
-/* Apply the font to an element */
-.my-element {
-  font-family: 'Harlow Solid LET', sans-serif;
-}
 
 /* Reset & base styles */
 * {
