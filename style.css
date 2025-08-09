@@ -37,8 +37,7 @@ a {
 
 /* Header */
 header {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.6)),
-              url('images/epicclouds.jpg') center/cover no-repeat;
+  background: url('images/epicclouds.jpg') center/cover no-repeat;
   height: 90vh;
   display: flex;
   justify-content: center;
