@@ -8,7 +8,7 @@
 
 
 :root {
-  --gold: #d4af37;
+  --maincolor: #36454F;
   --dark: #111;
   --light: #f5f5f5;
   --font-heading: 'HarlowSolidItalic', cursive;
@@ -50,7 +50,7 @@ header {
 .header-content h1 {
   font-family: var(--font-heading);
   font-size: 3.5rem;
-  color: var(--gold);
+  color: var(--maincolor);
   margin: 0;
 }
 
@@ -64,7 +64,7 @@ header {
   display: inline-block;
   margin-top: 25px;
   padding: 14px 28px;
-  background: var(--gold);
+  background: var(--maincolor);
   color: var(--dark);
   font-weight: 600;
   border-radius: 4px;
@@ -85,7 +85,7 @@ section {
 
 section h2 {
   text-align: center;
-  color: var(--gold);
+  color: var(--maincolor);
   margin-bottom: 50px;
 }
 
@@ -121,7 +121,7 @@ section h2 {
 }
 
 .card-body h3 {
-  color: var(--gold);
+  color: var(--maincolor);
   margin-bottom: 10px;
 }
 
@@ -140,7 +140,7 @@ section h2 {
 }
 
 .signup h2 {
-  color: var(--gold);
+  color: var(--maincolor);
   margin-bottom: 15px;
 }
 
@@ -166,7 +166,7 @@ section h2 {
 
 .signup button {
   padding: 14px 28px;
-  background: var(--gold);
+  background: var(--maincolor);
   color: var(--dark);
   border: none;
   border-radius: 4px;
