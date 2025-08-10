@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", function () {
-            navLinks.classList.toggle("hidden");
+            navLinks.classList.toggle("show");
         });
     } else {
         console.error("Menu toggle or nav links not found in DOM.");
