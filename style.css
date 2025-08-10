@@ -319,7 +319,7 @@ section h2 {
   background: rgba(34, 34, 34, 0); /* semi-transparent instead of solid #222 */
   border-radius: 8px;
   padding: 8px; /* reduced from 15px */
-  width: 220px;
+  flex: 0 0 220px; /* fixed width */
   text-align: center;
   transition: transform 0.3s ease;
 }
