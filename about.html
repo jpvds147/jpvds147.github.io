@@ -10,17 +10,22 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">YourBrand</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html" class="basket-icon">
-                    <img src="images/cart-icon.svg" alt="Cart">
-                </a></li>
-            </ul>
+           <nav class="main-menu" id="main-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+ <button id="cart-toggle" aria-label="Basket">
+    <i class="fas fa-shopping-basket"></i>
+    <span id="cart-count">0</span>
+  </button>
+    </ul>
+  </nav>
+
+  <button id="menu-toggle" aria-label="Toggle menu">
+    &#9776;  <!-- hamburger icon -->
+  </button>
         </nav>
     </header>
 
