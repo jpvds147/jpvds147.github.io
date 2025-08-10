@@ -1,7 +1,13 @@
-<script> const menuToggle = document.getElementById('menu-toggle');
-const mainMenu = document.getElementById('main-menu');
+// menu.js
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
 
-menuToggle.addEventListener('click', () => {
-  mainMenu.classList.toggle('show');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("hidden");
+        });
+    } else {
+        console.error("Menu toggle or nav links not found in DOM.");
+    }
 });
-</script> 
