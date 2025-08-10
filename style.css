@@ -301,11 +301,10 @@ section h2 {
 }
 
 /* Cards */
-
 .card {
-  background: #222;
+  background: rgba(34, 34, 34, 0.5); /* semi-transparent instead of solid #222 */
   border-radius: 8px;
-  padding: 15px;
+  padding: 8px; /* reduced from 15px */
   width: 220px;
   text-align: center;
   transition: transform 0.3s ease;
@@ -325,7 +324,7 @@ section h2 {
 }
 
 .card-body {
-  padding: 20px 10px 10px;
+  padding: 10px 5px 5px; /* reduced padding */
 }
 
 .card-body h3 {
@@ -337,6 +336,7 @@ section h2 {
   color: #ccc;
   font-size: 0.95rem;
 }
+
 
 /* === Signup Section === */
 
