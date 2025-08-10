@@ -21,15 +21,6 @@
   <header>
 
 <div id="menu-placeholder"></div>
-
-<script>
-  fetch("menu.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("menu-placeholder").innerHTML = data;
-    });
-</script>
-
    
   </header>
 
@@ -87,8 +78,17 @@
     <p>© 2025 JaJa Apparel. All Rights Reserved.</p>
   </footer>
 
-<script src="menu.js">
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("menu-placeholder").innerHTML = data;
+      })
+      .catch(err => console.error("Failed to load menu:", err));
+  });
 </script>
+
  
 </body>
 </html>
