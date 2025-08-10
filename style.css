@@ -309,6 +309,12 @@ section h2 {
   gap: 20px;
   padding-bottom: 10px; /* optional */
   -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+      -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.products-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
 }
 
 
