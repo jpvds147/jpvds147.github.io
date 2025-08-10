@@ -104,7 +104,27 @@
       })
       .catch(err => console.error("Failed to load menu:", err));
   });
+
+const container = document.querySelector('.products-container');
+
+let scrollPos = 0;
+const scrollSpeed = 1; // pixels per frame, adjust for speed
+
+function loopScroll() {
+  scrollPos += scrollSpeed;
+  if (scrollPos >= container.scrollWidth - container.clientWidth) {
+    scrollPos = 0; // Reset to start to loop
+  }
+  container.scrollLeft = scrollPos;
+  requestAnimationFrame(loopScroll);
+}
+
+loopScroll();
+
+
+ 
 </script>
+
 
  
 </body>
