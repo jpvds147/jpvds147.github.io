@@ -300,6 +300,20 @@ section h2 {
   justify-items: center;
 }
 
+/* infinite horizontal scroll for products */
+
+.products-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding-bottom: 10px; /* optional */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+
+
+
 /* Cards */
 .card {
   background: rgba(34, 34, 34, 0); /* semi-transparent instead of solid #222 */
