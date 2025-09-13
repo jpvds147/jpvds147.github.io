@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jaja - when life was simpler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sage-green: #9CAF88;
+            --stone-beige: #D4C5B0;
+            --cream-white: #FAF7F2;
+            --burnt-orange: #CC8B65;
+            --forest-green: #4A5D23;
+            --charcoal: #2C2C2C;
+            --light-gray: #F5F5F5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--cream-white);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(156, 175, 136, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--forest-green);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-green);
+        }
+
+        .cart-icon {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--charcoal);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="mountain" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23A8C686;stop-opacity:1" /><stop offset="100%" style="stop-color:%234A5D23;stop-opacity:1" /></linearGradient></defs><polygon points="0,800 300,200 600,400 900,100 1200,300 1200,800" fill="url(%23mountain)"/><polygon points="0,800 200,350 500,500 800,250 1200,450 1200,800" fill="%23D4C5B0" opacity="0.8"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: var(--sage-green);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background: var(--forest-green);
+            transform: translateY(-2px);
+        }
+
+        /* Products Section */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        /* Crisscross Layout */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card:nth-child(1) { grid-column: 1; }
+        .product-card:nth-child(2) { grid-column: 2; }
+        .product-card:nth-child(3) { 
+            grid-column: 1 / 3; 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .product-card:nth-child(4) { grid-column: 1; }
+        .product-card:nth-child(5) { grid-column: 2; }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--sage-green);
+        }
+
+        .product-card:nth-child(1) .product-image { background: linear-gradient(135deg, var(--sage-green), var(--stone-beige)); }
+        .product-card:nth-child(2) .product-image { background: linear-gradient(135deg, var(--burnt-orange), var(--stone-beige)); }
+        .product-card:nth-child(3) .product-image { background: linear-gradient(135deg, var(--forest-green), var(--sage-green)); }
+        .product-card:nth-child(4) .product-image { background: linear-gradient(135deg, var(--charcoal), var(--stone-beige)); }
+        .product-card:nth-child(5) .product-image { background: linear-gradient(135deg, var(--burnt-orange), var(--sage-green)); }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--forest-green);
+        }
+
+        .product-description {
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--burnt-orange);
+        }
+
+        /* Brand Story Section */
+        .brand-story {
+            background: var(--sage-green);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .brand-story .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .brand-story h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .brand-story p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--sage-green);
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card:nth-child(3) {
+                grid-column: 1;
+                display: block;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">jaja</a>
+            <ul class="nav-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cart-icon">🛒</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>jaja</h1>
+            <p class="tagline">when life was simpler</p>
+            <button class="cta-button" onclick="document.getElementById('products').scrollIntoView()">
+                Explore Collection
+            </button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2 class="section-title fade-in">Premium Adventure Gear</h2>
+        
+        <div class="products-grid">
+            <!-- Hats -->
+            <div class="product-card fade-in">
+                <div class="product-image">🧢</div>
+                <div class="product-info">
+                    <h3 class="product-name">Adventure Hats</h3>
+                    <p class="product-description">Classic caps and beanies for every journey</p>
+                    <p class="product-price">$35 - $45</p>
+                </div>
+            </div>
+
+            <!-- Hoodies -->
+            <div class="product-card fade-in">
+                <div class="product-image">👕</div>
+                <div class="product-info">
+                    <h3 class="product-name">Premium Hoodies</h3>
+                    <p class="product-description">Cozy comfort for outdoor adventures</p>
+                    <p class="product-price">$85 - $120</p>
+                </div>
+            </div>
+
+            <!-- Shirts (Center piece) -->
+            <div class="product-card fade-in">
+                <div class="product-image">👔</div>
+                <div class="product-info">
+                    <h3 class="product-name">Essential Shirts</h3>
+                    <p class="product-description">Soft, durable tees with subtle branding. Perfect for any adventure, from backyard exploration to mountain trails.</p>
+                    <p class="product-price">$45 - $65</p>
+                </div>
+            </div>
+
+            <!-- Backpacks -->
+            <div class="product-card fade-in">
+                <div class="product-image">🎒</div>
+                <div class="product-info">
+                    <h3 class="product-name">Custom Backpacks</h3>
+                    <p class="product-description">Functional packs for every journey</p>
+                    <p class="product-price">$95 - $150</p>
+                </div>
+            </div>
+
+            <!-- Wallets -->
+            <div class="product-card fade-in">
+                <div class="product-image">👛</div>
+                <div class="product-info">
+                    <h3 class="product-name">Premium Wallets</h3>
+                    <p class="product-description">Minimalist everyday carry essentials</p>
+                    <p class="product-price">$55 - $75</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story Section -->
+    <section id="story" class="brand-story">
+        <div class="container">
+            <h2>Adventure Doesn't Have an Age Limit</h2>
+            <p>
+                Whether you're a kid exploring your backyard, a teenager on a hiking trip, 
+                an amateur runner on a long trail, or a business professional navigating 
+                the boardroom adventure - jaja is for you. We believe in premium quality 
+                gear that remembers when things were built to last, when life was simpler, 
+                and when every moment held the promise of adventure.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Products</h3>
+                <p><a href="#">Hats</a></p>
+                <p><a href="#">Shirts</a></p>
+                <p><a href="#">Hoodies</a></p>
+                <p><a href="#">Backpacks</a></p>
+                <p><a href="#">Wallets</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <p><a href="#">About Us</a></p>
+                <p><a href="#">Our Story</a></p>
+                <p><a href="#">Sustainability</a></p>
+                <p><a href="#">Careers</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <p><a href="#">Contact</a></p>
+                <p><a href="#">Size Guide</a></p>
+                <p><a href="#">Shipping</a></p>
+                <p><a href="#">Returns</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p><a href="#">Newsletter</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Twitter</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 jaja. All rights reserved. | when life was simpler</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = '0.2s';
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Product card hover effects
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    // Add product view functionality here
+                    console.log('Product clicked:', this.querySelector('.product-name').textContent);
+                });
+            });
+        });
+
+        // Mobile menu toggle (if needed)
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
