@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JAJA — When life was simpler</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <meta name="description" content="JAJA — premium nostalgic gear inspired by the 1990s. Simple, elegant, built for every adventure." />
+
+  <style>
+    :root{
+      --navy: #0b2540; /* deep navy */
+      --accent: #d46a2f; /* burnt orange */
+      --mustard: #d9a14a;
+      --cream: #f7f4ee;
+      --forest: #1f5d3b;
+      --muted: #8b8b8b;
+      --max-width: 1200px;
+      --radius: 14px;
+    }
+
+    /* Reset */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--navy);
+      background:var(--cream);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Container */
+    .container{width:90%;max-width:var(--max-width);margin:0 auto}
+
+    /* Header */
+    header{padding:28px 0;display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:14px}
+    .logo-mark{
+      width:56px;height:56px;border-radius:10px;background:linear-gradient(180deg,var(--navy),var(--forest));
+      display:flex;align-items:center;justify-content:center;color:var(--cream);font-weight:900;font-family:Rubik, monospace;font-size:20px;letter-spacing:1px
+    }
+    .brand{font-family:Rubik, sans-serif;font-weight:700}
+    .tag{font-size:13px;color:var(--muted);margin-top:2px}
+
+    nav{display:flex;gap:18px;align-items:center}
+    .cta{padding:10px 16px;border-radius:10px;background:var(--navy);color:var(--cream);font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:36px 0}
+    .hero-left{padding-right:8px}
+    .kicker{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
+    h1{font-family:Rubik, sans-serif;font-size:44px;margin:10px 0;line-height:1.02}
+    p.lead{color:var(--navy);opacity:0.9}
+    .hero-cta{margin-top:18px;display:flex;gap:12px}
+
+    .hero-right{border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(11,37,64,0.12)}
+    .hero-right img{height:100%;object-fit:cover;width:100%}
+
+    /* Crisscross highlights */
+    .highlights{display:grid;gap:24px;margin:38px 0}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center}
+    .row.alt{grid-template-columns:1fr 1fr}
+    .panel{background:var(--cream);border-radius:12px;padding:18px;display:flex;gap:18px;align-items:center}
+    .panel .imgwrap{width:48%;border-radius:10px;overflow:hidden;flex-shrink:0}
+    .panel .copy{padding:6px 0}
+    .product-title{font-weight:700;font-family:Rubik, sans-serif}
+    .product-desc{color:var(--muted);margin-top:6px}
+    .btn-outline{padding:10px 12px;border-radius:10px;border:1px solid rgba(11,37,64,0.06);background:transparent;font-weight:600}
+
+    /* Reversed panels on small screens stack */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero-right{height:260px}
+      .row{grid-template-columns:1fr}
+      .panel{flex-direction:column}
+      .panel .imgwrap{width:100%}
+    }
+
+    /* Product grid */
+    .shop{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0 56px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));padding:14px;border-radius:12px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 22px rgba(11,37,64,0.04)}
+    .card .media{height:220px;border-radius:8px;overflow:hidden}
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .price{font-weight:700}
+
+    @media (max-width:900px){.shop{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){.shop{grid-template-columns:1fr}}
+
+    /* Footer */
+    footer{padding:40px 0;border-top:1px solid rgba(11,37,64,0.04);margin-top:40px}
+    .social{display:flex;gap:12px}
+
+    /* Subtle retro texture */
+    .grain{position:fixed;inset:0;pointer-events:none;opacity:0.03;background-image:radial-gradient(circle, rgba(0,0,0,0.02) 1px, transparent 1px);background-size:6px 6px}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header class="container">
+    <div class="logo">
+      <div class="logo-mark">JA</div>
+      <div>
+        <div class="brand">JAJA</div>
+        <div class="tag">When life was simpler</div>
+      </div>
+    </div>
+
+    <nav>
+      <a class="muted" href="#">Story</a>
+      <a class="muted" href="#shop">Shop</a>
+      <a class="muted" href="#journal">Journal</a>
+      <a class="cta" href="#shop">Shop collection</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kicker">Premium · Nostalgic · Adventure</div>
+        <h1>Timeless gear for small adventures — built for now.</h1>
+        <p class="lead">From backyard quests to long trail runs, JAJA brings the 1990s spirit into modern life with premium essentials: shirts, hoodies, hats, wallets and backpacks that last.</p>
+
+        <div class="hero-cta">
+          <a class="cta" href="#shop">Shop the collection</a>
+          <a class="btn-outline" href="#story">Our story</a>
+        </div>
+
+        <div style="margin-top:16px;color:var(--muted);font-size:13px">Inspired by 90's adventure, reimagined for today.</div>
+      </div>
+
+      <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8f1d2b38c1c6f6bd2b2a8a8b9b0a1a41" alt="90s nostalgic adventure">
+      </div>
+    </section>
+
+    <!-- Crisscross highlights -->
+    <section class="highlights">
+      <div class="row">
+        <div class="panel" style="grid-column:1">
+          <div class="imgwrap"><img src="https://images.unsplash.com/photo-1516431880-5e6c3b6a8b2b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1f3b2bcf8d3a8b9f2f8f2a2" alt="classic backpack"></div>
+          <div class="copy">
+            <div class="product-title">The Original Backpack</div>
+            <div class="product-desc">A single-pocket, premium canvas backpack with classic 90's proportions and modern reinforcements. Carry it everywhere.</div>
+            <div style="margin-top:12px"><a class="btn-outline" href="#shop">View product</a></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="imgwrap"><img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3f1d7b3d6c9a7f1c44a6" alt="premium hoodie"></div>
+          <div class="copy">
+            <div class="product-title">Retro Hoodie</div>
+            <div class="product-desc">Soft, heavy-weight cotton with a gentle vintage wash. Comfortable for the trail or the boardroom.</div>
+            <div style="margin-top:12px"><a class="btn-outline" href="#shop">View product</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- reversed row -->
+      <div class="row">
+        <div class="panel">
+          <div class="imgwrap"><img src="https://images.unsplash.com/photo-1520975912118-2a1b0ee7d7a8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=bc7c1f3e6a5f4f6ca7b1" alt="cap hat"></div>
+          <div class="copy">
+            <div class="product-title">90's Cap</div>
+            <div class="product-desc">Structured brim, low profile — the little detail that finishes the look.</div>
+            <div style="margin-top:12px"><a class="btn-outline" href="#shop">View product</a></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="imgwrap"><img src="https://images.unsplash.com/photo-1543168256-2a9af7ecf6d6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4f9b4c9f0d8a6b7f9e6b" alt="wallet leather"></div>
+          <div class="copy">
+            <div class="product-title">Classic Wallet</div>
+            <div class="product-desc">Minimal leather, stitched by hand. Holds what you need and nothing more.</div>
+            <div style="margin-top:12px"><a class="btn-outline" href="#shop">View product</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section id="story" style="display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:26px">
+      <div>
+        <h2 style="font-family:Rubik, sans-serif">Our philosophy</h2>
+        <p class="muted">JAJA is an ode to small adventures and simpler days. We craft things that endure — not because trends demand it, but because good things are worth keeping. Our materials and stitching are premium; our designs are intentional and straightforward.</p>
+
+        <ul style="margin-top:14px;color:var(--muted);">
+          <li>Simple silhouettes inspired by the 90's</li>
+          <li>Premium fabrics and leather</li>
+          <li>Minimal packaging — less waste, more meaning</li>
+        </ul>
+      </div>
+
+      <div style="border-radius:12px;overflow:hidden;box-shadow:0 8px 26px rgba(11,37,64,0.06)">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=5b6f2b9a3c4a6c1d8e9" alt="old school adventure">
+      </div>
+    </section>
+
+    <!-- Shop grid -->
+    <section id="shop">
+      <h3 style="font-family:Rubik, sans-serif;margin-bottom:14px">Shop the essentials</h3>
+      <div class="shop">
+        <div class="card">
+          <div class="media"><img src="https://images.unsplash.com/photo-1503342217505-b0a15b6b9e9a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=a1b2c3d4" alt="Backpack product"></div>
+          <div class="meta"><div class="title">Original Backpack</div><div class="price">R1,299</div></div>
+          <div class="muted">Single-pocket canvas, padded straps, 20L.</div>
+          <div style="margin-top:auto"><a class="btn-outline" href="#">Add to cart</a></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="https://images.unsplash.com/photo-1532634896-26909d0d5b9a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=ef1a2b3c" alt="Hoodie product"></div>
+          <div class="meta"><div class="title">Retro Hoodie</div><div class="price">R899</div></div>
+          <div class="muted">Heavy-weight cotton with vintage wash.</div>
+          <div style="margin-top:auto"><a class="btn-outline" href="#">Add to cart</a></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd1234" alt="Cap product"></div>
+          <div class="meta"><div class="title">90's Cap</div><div class="price">R249</div></div>
+          <div class="muted">Structured, adjustable, low-profile.</div>
+          <div style="margin-top:auto"><a class="btn-outline" href="#">Add to cart</a></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="https://images.unsplash.com/photo-1523381212346-9076e6d4f3b8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=xyz987" alt="Wallet product"></div>
+          <div class="meta"><div class="title">Classic Wallet</div><div class="price">R349</div></div>
+          <div class="muted">Hand-stitched vegetable-tanned leather.</div>
+          <div style="margin-top:auto"><a class="btn-outline" href="#">Add to cart</a></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=someid" alt="Shirt product"></div>
+          <div class="meta"><div class="title">Classic Tee</div><div class="price">R199</div></div>
+          <div class="muted">Midweight cotton with a relaxed 90's fit.</div>
+          <div style="margin-top:auto"><a class="btn-outline" href="#">Add to cart</a></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="https://images.unsplash.com/photo-1533105071-7c3b6d72f0b6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=otherid" alt="Accessory product"></div>
+          <div class="meta"><div class="title">Bandana</div><div class="price">R79</div></div>
+          <div class="muted">Multi-use, camp-ready.</div>
+          <div style="margin-top:auto"><a class="btn-outline" href="#">Add to cart</a></div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <div class="brand">JAJA</div>
+          <div class="muted" style="font-size:13px">When life was simpler — built with care.</div>
+        </div>
+
+        <div class="social">
+          <a class="muted" href="#">Instagram</a>
+          <a class="muted" href="#">Pinterest</a>
+          <a class="muted" href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // small hover microinteraction for cards
+    document.querySelectorAll('.card').forEach(c=>{
+      c.addEventListener('mouseenter',()=>c.style.transform='translateY(-6px)');
+      c.addEventListener('mouseleave',()=>c.style.transform='translateY(0)');
+      c.style.transition='transform 220ms ease';
+    })
+  </script>
+</body>
+</html>
